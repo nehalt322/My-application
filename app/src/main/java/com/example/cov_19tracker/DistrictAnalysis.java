@@ -66,7 +66,6 @@ public class DistrictAnalysis extends AppCompatActivity {
         districtrefreshLayout= findViewById(R.id.districtRefresh_layout);
         scrollView = findViewById(R.id.districtScrollView);
          district_PieView = findViewById(R.id.District_PieChart);
-        lastupdated = findViewById(R.id.tvdistrictdate);
 
 
 
@@ -105,7 +104,7 @@ public class DistrictAnalysis extends AppCompatActivity {
                 config.animOnTouch(true);
                 config.splitAngle(3);
                 config.drawText(true);
-                config.textSize(20);
+                config.textSize(30);
 
 
                 district_PieView.applyConfig(config);
@@ -143,7 +142,7 @@ public class DistrictAnalysis extends AppCompatActivity {
         config.animOnTouch(true);
         config.splitAngle(3);
         config.drawText(true);
-        config.textSize(20);
+        config.textSize(30);
 
 
         district_PieView.applyConfig(config);

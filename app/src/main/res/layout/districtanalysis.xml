@@ -29,7 +29,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/districtpiechart"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
+                    android:layout_height="300dp"
                     android:layout_margin="10dp"
                     android:layout_marginStart="10dp"
                     android:layout_marginLeft="10dp"
@@ -51,31 +51,7 @@
                     </com.razerdp.widget.animatedpieview.AnimatedPieView>
 
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/date"
-                        android:textColor="#ffffff"
-                        android:textAlignment="center"
-                        android:gravity="center_horizontal"
-                        android:textSize="10sp"
-                        android:fontFamily="sans-serif-light"
-                        tools:ignore="SmallSp">
-                    </TextView>
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/dateformat"
-                        android:textColor="#ffffff"
-                        android:textAlignment="center"
-                        android:gravity="center_horizontal"
-                        android:textSize="10sp"
-                        android:fontFamily="sans-serif-light"
-                        tools:ignore="SmallSp"
-                        android:layout_marginTop="10dp"
-                        android:id="@+id/tvdistrictdate">
-                    </TextView>
 
                 </androidx.cardview.widget.CardView>
 

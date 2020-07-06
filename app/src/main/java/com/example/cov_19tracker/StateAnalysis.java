@@ -111,7 +111,7 @@ public class StateAnalysis extends AppCompatActivity {
                 config.animOnTouch(true);
                 config.splitAngle(3);
                 config.drawText(true);
-                config.textSize(20);
+                config.textSize(30);
 
 
                 State_piechart.applyConfig(config);
@@ -154,7 +154,7 @@ public class StateAnalysis extends AppCompatActivity {
         config.animOnTouch(true);
         config.splitAngle(3);
         config.drawText(true);
-        config.textSize(20);
+        config.textSize(30);
 
 
         State_piechart.applyConfig(config);
