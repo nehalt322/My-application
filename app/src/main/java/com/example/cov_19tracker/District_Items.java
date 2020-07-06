@@ -57,8 +57,8 @@ public class District_Items {
         return mnewrecovered;
     }
 
-
     public String getMnewdeceased() {
         return mnewdeceased;
     }
 }
+// returns all the components
