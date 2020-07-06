@@ -61,4 +61,3 @@ public class District_Items {
         return mnewdeceased;
     }
 }
-// returns all the components
