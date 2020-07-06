@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#000000</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="colorconfirmed">#FBC233</color>
+    <color name="coloractive">#78DBF3</color>
+    <color name="colorrecovered">#7EC544</color>
+    <color name="colordeceased">#F6404F</color>
+    <color name="colortested">#ba68c8</color>
+    <color name="colorbackground">#17171a</color>
+    <color name="cardbackground">#2c2c33</color>
+</resources>

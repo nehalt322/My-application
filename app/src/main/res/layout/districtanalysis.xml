@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cardbackground"
+    android:id="@+id/districtRefresh_layout">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/districtScrollView">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/districtpiechart"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_margin="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="parent"
+                    app:cardBackgroundColor="@color/colorbackground">
+
+                    <com.razerdp.widget.animatedpieview.AnimatedPieView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/District_PieChart">
+                    </com.razerdp.widget.animatedpieview.AnimatedPieView>
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/date"
+                        android:textColor="#ffffff"
+                        android:textAlignment="center"
+                        android:gravity="center_horizontal"
+                        android:textSize="10sp"
+                        android:fontFamily="sans-serif-light"
+                        tools:ignore="SmallSp">
+                    </TextView>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dateformat"
+                        android:textColor="#ffffff"
+                        android:textAlignment="center"
+                        android:gravity="center_horizontal"
+                        android:textSize="10sp"
+                        android:fontFamily="sans-serif-light"
+                        tools:ignore="SmallSp"
+                        android:layout_marginTop="10dp"
+                        android:id="@+id/tvdistrictdate">
+                    </TextView>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/confirmed"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_margin="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    app:cardBackgroundColor="@color/colorbackground"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/districtpiechart">
+
+                    <TextView
+                        android:id="@+id/districtconfirmed"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="sans-serif-light"
+                        android:text="@string/confirmed"
+                        android:textColor="@color/colorconfirmed"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/tvdistrict_confirmed"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:layout_marginTop="14dp"
+                        android:layout_marginEnd="130dp"
+                        android:layout_marginRight="130dp"
+                        android:text="@string/tvconfirmed"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/colorconfirmed"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/tvdistrict_newconfirmed"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="50dp"
+                        android:layout_marginRight="50dp"
+                        android:text="@string/tvnewconfirmed"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/colorconfirmed"
+                        android:textSize="12sp" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/active"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_margin="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    app:cardBackgroundColor="@color/colorbackground"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/confirmed">
+
+                    <TextView
+                        android:id="@+id/districtactive"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="sans-serif-light"
+                        android:text="@string/active"
+                        android:textColor="@color/coloractive"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/tvdistrict_active"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:layout_marginTop="14dp"
+                        android:layout_marginEnd="130dp"
+                        android:layout_marginRight="130dp"
+                        android:text="@string/tvactive"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/coloractive"
+                        android:textSize="14sp" />
+
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/recovered"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_margin="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    app:cardBackgroundColor="@color/colorbackground"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/active">
+
+                    <TextView
+                        android:id="@+id/districtrecovered"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="sans-serif-light"
+                        android:text="@string/recovered"
+                        android:textColor="@color/colorrecovered"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/tvdistrict_recovered"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:layout_marginTop="14dp"
+                        android:layout_marginEnd="130dp"
+                        android:layout_marginRight="130dp"
+                        android:text="@string/tvrecovered"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/colorrecovered"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/tvdistrict_newrecovered"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="50dp"
+                        android:layout_marginRight="50dp"
+                        android:text="@string/tvnewconfirmed"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/colorrecovered"
+                        android:textSize="12sp" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/deceased"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_margin="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    app:cardBackgroundColor="@color/colorbackground"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/recovered">
+
+                    <TextView
+                        android:id="@+id/districtdeceased"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="sans-serif-light"
+                        android:text="@string/deceased"
+                        android:textColor="@color/colordeceased"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/tvdistrict_deceased"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:layout_marginTop="14dp"
+                        android:layout_marginEnd="130dp"
+                        android:layout_marginRight="130dp"
+                        android:text="@string/tvrecovered"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/colordeceased"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/tvdistrict_newdeceased"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="50dp"
+                        android:layout_marginRight="50dp"
+                        android:text="@string/tvnewconfirmed"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/colordeceased"
+                        android:textSize="12sp" />
+
+                </androidx.cardview.widget.CardView>
+
+
+
+            </LinearLayout>
+
+
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+

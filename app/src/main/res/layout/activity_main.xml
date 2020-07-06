@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerHorizontal="false"
+    android:background="#2c2c33"
+    tools:context=".MainActivity"
+    android:id="@+id/refresh_layout">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:ignore="UselessParent"
+            android:id="@+id/mainActvity_Scrollview">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    app:cardBackgroundColor="#17171a"
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="5dp">
+
+
+                    <com.razerdp.widget.animatedpieview.AnimatedPieView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/Main_PieChart"
+                        android:layout_marginTop="20dp">
+                    </com.razerdp.widget.animatedpieview.AnimatedPieView>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/date"
+                        android:textColor="#ffffff"
+                        android:textAlignment="center"
+                        android:gravity="center_horizontal"
+                        android:textSize="10sp"
+                        android:fontFamily="sans-serif-light"
+                        tools:ignore="SmallSp">
+                    </TextView>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dateformat"
+                        android:textColor="#ffffff"
+                        android:textAlignment="center"
+                        android:gravity="center_horizontal"
+                        android:textSize="10sp"
+                        android:fontFamily="sans-serif-light"
+                        tools:ignore="SmallSp"
+                        android:layout_marginTop="10dp"
+                        android:id="@+id/tvdate">
+                    </TextView>
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="400dp"
+                    android:layout_margin="10dp"
+                    app:cardBackgroundColor="#17171a"
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+
+                            <TextView
+                                android:id="@+id/confirmed"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginTop="40dp"
+                                android:fontFamily="sans-serif-light"
+                                android:text="@string/confirmed"
+                                android:textColor="#FBC233"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:id="@+id/tvconfirmed"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="end"
+                                android:layout_marginTop="45dp"
+                                android:layout_marginEnd="130dp"
+                                android:layout_marginRight="130dp"
+                                android:text="@string/tvconfirmed"
+                                android:textAlignment="textEnd"
+                                android:textColor="@color/colorconfirmed"
+                                android:textSize="16sp" />
+
+                            <TextView
+                                android:id="@+id/newconfirmed"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="end"
+                                android:layout_marginTop="50dp"
+                                android:layout_marginEnd="50dp"
+                                android:layout_marginRight="50dp"
+                                android:text="@string/tvnewconfirmed"
+                                android:textAlignment="textEnd"
+                                android:textColor="@color/colorconfirmed"
+                                android:textSize="12sp" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginTop="70dp"
+                                android:layout_marginRight="20dp"
+                                android:background="#ffffff" />
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+
+                            <TextView
+                                android:id="@+id/active"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginTop="40dp"
+                                android:fontFamily="sans-serif-light"
+                                android:text="@string/active"
+                                android:textColor="#78DBF3"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:id="@+id/tvactive"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="end"
+                                android:layout_marginTop="45dp"
+                                android:layout_marginEnd="130dp"
+                                android:layout_marginRight="130dp"
+                                android:text="@string/tvactive"
+                                android:textAlignment="textEnd"
+                                android:textColor="@color/coloractive"
+                                android:textSize="16sp" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginTop="70dp"
+                                android:layout_marginRight="20dp"
+                                android:background="#ffffff" />
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+
+                            <TextView
+                                android:id="@+id/recovered"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginTop="40dp"
+                                android:fontFamily="sans-serif-light"
+                                android:text="@string/recovered"
+                                android:textColor="#7EC544"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:id="@+id/tvrecovered"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="end"
+                                android:layout_marginTop="45dp"
+                                android:layout_marginEnd="130dp"
+                                android:layout_marginRight="130dp"
+                                android:text="@string/tvconfirmed"
+                                android:textAlignment="textEnd"
+                                android:textColor="@color/colorrecovered"
+                                android:textSize="16sp" />
+
+                            <TextView
+                                android:id="@+id/newrecovered"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="end"
+                                android:layout_marginTop="50dp"
+                                android:layout_marginEnd="50dp"
+                                android:layout_marginRight="50dp"
+                                android:text="@string/tvnewconfirmed"
+                                android:textAlignment="textEnd"
+                                android:textColor="@color/colorrecovered"
+                                android:textSize="12sp" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginTop="70dp"
+                                android:layout_marginRight="20dp"
+                                android:background="#ffffff" />
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+
+                            <TextView
+                                android:id="@+id/deceased"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginTop="40dp"
+                                android:fontFamily="sans-serif-light"
+                                android:text="@string/deceased"
+                                android:textColor="#F6404F"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:id="@+id/tvdeceased"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="end"
+                                android:layout_marginTop="45dp"
+                                android:layout_marginEnd="130dp"
+                                android:layout_marginRight="130dp"
+                                android:text="@string/tvconfirmed"
+                                android:textAlignment="textEnd"
+                                android:textColor="@color/colordeceased"
+                                android:textSize="16sp" />
+
+                            <TextView
+                                android:id="@+id/newdeceased"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="end"
+                                android:layout_marginTop="50dp"
+                                android:layout_marginEnd="50dp"
+                                android:layout_marginRight="50dp"
+                                android:text="@string/tvnewconfirmed"
+                                android:textAlignment="textEnd"
+                                android:textColor="@color/colordeceased"
+                                android:textSize="14sp" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginTop="70dp"
+                                android:layout_marginRight="20dp"
+                                android:background="#ffffff" />
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+
+                            <TextView
+                                android:id="@+id/tested"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginTop="40dp"
+                                android:fontFamily="sans-serif-light"
+                                android:text="@string/test"
+                                android:textColor="#ba68c8"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:id="@+id/tvtested"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="end"
+                                android:layout_marginTop="45dp"
+                                android:layout_marginEnd="130dp"
+                                android:layout_marginRight="130dp"
+                                android:text="@string/tvconfirmed"
+                                android:textAlignment="textEnd"
+                                android:textColor="@color/colortested"
+                                android:textSize="16sp" />
+
+                            <TextView
+                                android:id="@+id/newtested"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="end"
+                                android:layout_marginTop="50dp"
+                                android:layout_marginEnd="50dp"
+                                android:layout_marginRight="50dp"
+                                android:text="@string/tvnewconfirmed"
+                                android:textAlignment="textEnd"
+                                android:textColor="@color/colortested"
+                                android:textSize="12sp" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginTop="70dp"
+                                android:layout_marginRight="20dp"
+                                android:background="#ffffff" />
+                        </RelativeLayout>
+
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <Button
+                    android:id="@+id/mainactivitybutton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:text="@string/button"
+                    android:fontFamily="sans-serif"
+                    android:background="@color/colorbackground"
+                    android:textColor="#e6ac85" />
+
+            </LinearLayout>
+
+        </ScrollView>
+    </RelativeLayout>
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

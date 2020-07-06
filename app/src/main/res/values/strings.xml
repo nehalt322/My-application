@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">CoV-19 Tracker</string>
+    <string name="confirmed">Confirmed</string>
+    <string name="active">Active</string>
+    <string name="recovered">Recovered</string>
+    <string name="deceased">Deceased</string>
+    <string name="tvconfirmed">0</string>
+    <string name="tvactive">0</string>
+    <string name="tvrecovered">0</string>
+    <string name="tvdeceased">0</string>
+    <string name="test">Tested</string>
+    <string name="tvtest">0</string>
+    <string name="textview">COVID-19 STATUS</string>
+    <string name="button">State Analysis</string>
+    <string name="button2">WORLD DATA</string>
+    <string name="tvnewconfirmed">0</string>
+    <string name="tvnewactive">0</string>
+    <string name="tvstate">********</string>
+    <string name="stateconfirmed">0</string>
+    <string name="newstateconfirmed">0</string>
+    <string name="stateactive">0</string>
+    <string name="starwrecovered">0</string>
+    <string name="newstaterecovered">0</string>
+    <string name="statedeceased">0</string>
+    <string name="newstatedeceased">0</string>
+    <string name="state2confirmed">0</string>
+    <string name="state2">******</string>
+    <string name="btndistrict">District Analysis</string>
+    <string name="tvdistrict">********</string>
+    <string name="date">Last Updated -</string>
+    <string name="dateformat">######</string>
+</resources>
