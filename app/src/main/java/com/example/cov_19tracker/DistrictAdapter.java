@@ -5,8 +5,6 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Filter;
-import android.widget.Filterable;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -15,8 +13,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.razerdp.widget.animatedpieview.AnimatedPieView;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
 
 import static com.example.cov_19tracker.DistrictActivity.DISTRICT_ACTIVE;
 import static com.example.cov_19tracker.DistrictActivity.DISTRICT_CONFIRMED;
@@ -31,14 +27,12 @@ import static com.example.cov_19tracker.DistrictActivity.DISTRICT_RECOVERED;
 public class DistrictAdapter extends RecyclerView.Adapter<DistrictAdapter.districtViewHolder> {
     public Context mcontext;
     public ArrayList<District_Items> mdistrictlist;
-    private ArrayList<District_Items> mdistrictListFull;
     private OnItemClickListener mListner;
 
 
     public DistrictAdapter(Context context, ArrayList<District_Items> districtlist) {
         mcontext = context;
         mdistrictlist = districtlist;
-        mdistrictListFull = new ArrayList<>(districtlist);
     }
 
     @NonNull

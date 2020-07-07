@@ -2,6 +2,7 @@ package com.example.cov_19tracker;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.ViewTreeObserver;
 import android.widget.ScrollView;
@@ -9,12 +10,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.razerdp.widget.animatedpieview.AnimatedPieView;
 import com.razerdp.widget.animatedpieview.AnimatedPieViewConfig;
 import com.razerdp.widget.animatedpieview.data.SimplePieInfo;
+
+import java.util.Objects;
 
 import static com.example.cov_19tracker.DistrictActivity.DISTRICT_ACTIVE;
 import static com.example.cov_19tracker.DistrictActivity.DISTRICT_CONFIRMED;
@@ -24,14 +28,6 @@ import static com.example.cov_19tracker.DistrictActivity.DISTRICT_NEW_CONFIRMED;
 import static com.example.cov_19tracker.DistrictActivity.DISTRICT_NEW_DECEASED;
 import static com.example.cov_19tracker.DistrictActivity.DISTRICT_NEW_RECOVERED;
 import static com.example.cov_19tracker.DistrictActivity.DISTRICT_RECOVERED;
-import static com.example.cov_19tracker.stateactivity.STATE_ACTIVE;
-import static com.example.cov_19tracker.stateactivity.STATE_CONFIRMED;
-import static com.example.cov_19tracker.stateactivity.STATE_DECEASED;
-import static com.example.cov_19tracker.stateactivity.STATE_NAME;
-import static com.example.cov_19tracker.stateactivity.STATE_NEW_CONFIRMED;
-import static com.example.cov_19tracker.stateactivity.STATE_NEW_DECEASED;
-import static com.example.cov_19tracker.stateactivity.STATE_NEW_RECOVERED;
-import static com.example.cov_19tracker.stateactivity.STATE_RECOVERED;
 
 public class DistrictAnalysis extends AppCompatActivity {
 
@@ -42,13 +38,13 @@ public class DistrictAnalysis extends AppCompatActivity {
     public TextView newdistrictconfirmed;
     public TextView newdistrictrecovered;
     public TextView newdistrictdeceased;
-    public TextView lastupdated;
     SwipeRefreshLayout districtrefreshLayout ;
     ScrollView scrollView;
     boolean isRefreshed;
     AnimatedPieView district_PieView;
 
 
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -81,6 +77,7 @@ public class DistrictAnalysis extends AppCompatActivity {
         });
 
         districtrefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @RequiresApi(api = Build.VERSION_CODES.KITKAT)
             @Override
             public void onRefresh() {
                 isRefreshed = true;
@@ -95,10 +92,10 @@ public class DistrictAnalysis extends AppCompatActivity {
                 String districtRecovery = intent.getStringExtra(DISTRICT_RECOVERED);
 
                 AnimatedPieViewConfig config = new AnimatedPieViewConfig();
-                config.addData(new SimplePieInfo(Float.parseFloat(districtConfirmed.replaceAll(",", "")), Color.parseColor("#FFA000"), "Confirmed"));
-                config.addData(new SimplePieInfo(Float.parseFloat(districtActive.replaceAll(",", "")), Color.parseColor("#2962FF"), "Active"));
-                config.addData(new SimplePieInfo(Float.parseFloat(districtRecovery.replaceAll(",", "")), Color.parseColor("#1B5E20"), "Recovered"));
-                config.addData(new SimplePieInfo(Float.parseFloat(districtDeceased.replaceAll(",", "")), Color.parseColor("#F44336"), "Deceased"));
+                config.addData(new SimplePieInfo(Float.parseFloat(Objects.requireNonNull(districtConfirmed).replaceAll(",", "")), Color.parseColor("#FFA000"), "Confirmed"));
+                config.addData(new SimplePieInfo(Float.parseFloat(Objects.requireNonNull(districtActive).replaceAll(",", "")), Color.parseColor("#2962FF"), "Active"));
+                config.addData(new SimplePieInfo(Float.parseFloat(Objects.requireNonNull(districtRecovery).replaceAll(",", "")), Color.parseColor("#1B5E20"), "Recovered"));
+                config.addData(new SimplePieInfo(Float.parseFloat(Objects.requireNonNull(districtDeceased).replaceAll(",", "")), Color.parseColor("#F44336"), "Deceased"));
 
                 config.strokeMode(false);
                 config.animOnTouch(true);
@@ -133,10 +130,10 @@ public class DistrictAnalysis extends AppCompatActivity {
         String districtRecovery = intent.getStringExtra(DISTRICT_RECOVERED);
 
         AnimatedPieViewConfig config = new AnimatedPieViewConfig();
-        config.addData(new SimplePieInfo(Float.parseFloat(districtConfirmed.replaceAll(",", "")), Color.parseColor("#FFA000"), "Confirmed"));
-        config.addData(new SimplePieInfo(Float.parseFloat(districtActive.replaceAll(",", "")), Color.parseColor("#2962FF"), "Active"));
-        config.addData(new SimplePieInfo(Float.parseFloat(districtRecovery.replaceAll(",", "")), Color.parseColor("#1B5E20"), "Recovered"));
-        config.addData(new SimplePieInfo(Float.parseFloat(districtDeceased.replaceAll(",", "")), Color.parseColor("#F44336"), "Deceased"));
+        config.addData(new SimplePieInfo(Float.parseFloat(Objects.requireNonNull(districtConfirmed).replaceAll(",", "")), Color.parseColor("#FFA000"), "Confirmed"));
+        config.addData(new SimplePieInfo(Float.parseFloat(Objects.requireNonNull(districtActive).replaceAll(",", "")), Color.parseColor("#2962FF"), "Active"));
+        config.addData(new SimplePieInfo(Float.parseFloat(Objects.requireNonNull(districtRecovery).replaceAll(",", "")), Color.parseColor("#1B5E20"), "Recovered"));
+        config.addData(new SimplePieInfo(Float.parseFloat(Objects.requireNonNull(districtDeceased).replaceAll(",", "")), Color.parseColor("#F44336"), "Deceased"));
 
         config.strokeMode(false);
         config.animOnTouch(true);
@@ -157,7 +154,7 @@ public class DistrictAnalysis extends AppCompatActivity {
         newdistrictrecovered.setText(districtNewRecovered);
         newdistrictdeceased.setText(districtNewDeceased);
 
-        getSupportActionBar().setTitle(districtName);
+        Objects.requireNonNull(getSupportActionBar()).setTitle(districtName);
 
 
 
