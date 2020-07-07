@@ -7,16 +7,11 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.ViewTreeObserver;
-import android.widget.Adapter;
 import android.widget.ScrollView;
-import android.widget.Toast;
-
-import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
-import androidx.appcompat.widget.Toolbar;
+
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
@@ -43,7 +38,6 @@ public class stateactivity extends AppCompatActivity implements StateAdapter.OnI
     private RequestQueue requestQueue;
     SwipeRefreshLayout staterefreshLayout ;
     ScrollView scrollView;
-    boolean isRefreshed;
 
 
     public static final String STATE_NAME = "st_state";
@@ -71,35 +65,41 @@ public class stateactivity extends AppCompatActivity implements StateAdapter.OnI
         stateItems = new ArrayList<>();
         requestQueue = Volley.newRequestQueue(this);
 
-       @Override
-        public boolean onCreateOptionsMenu(Menu menu) {
-            getMenuInflater().inflate(R.menu.state_menu, menu);
-            returns
-            MenuItem menuItem = menu.findItem(R.id.action_search);
-            SearchView searchView = (SearchView) menuItem.getActionView();
-            searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-                @Override
-                public boolean onQueryTextSubmit(String query) {
-                    return false;
-                }
-
-                @Override
-                public boolean onQueryTextChange(String newText) {
-                    adapter.getFilter().filter(newText);
-                    return false;
-                }
-            });
-            return super.onCreateOptionsMenu(menu);
-        }*/
-
-
-
 
         parseItems();
 
 
     }
 
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.state_menu, menu);
+        MenuItem menuItem = menu.findItem(R.id.action_search);
+        SearchView searchView = (SearchView) menuItem.getActionView();
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                String userinput = newText.toLowerCase();
+                ArrayList<state_items> mstateListFull = new ArrayList<>();
+                for(state_items state : stateItems){
+                  if(state.getMstate().toLowerCase().contains(userinput)){
+                      mstateListFull.add(state);
+                  }
+                }
+                adapter.updateList(mstateListFull);
+                return false;
+
+                }
+
+            });
+        return true;
+        }
 
 
     private void parseItems() {

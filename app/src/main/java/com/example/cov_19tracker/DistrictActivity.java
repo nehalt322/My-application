@@ -82,35 +82,17 @@ public class DistrictActivity extends AppCompatActivity implements DistrictAdapt
 
 
 
-      /*  scrollView.getViewTreeObserver().addOnScrollChangedListener(new ViewTreeObserver.OnScrollChangedListener() {
 
-            @Override
-            public void onScrollChanged() {
-                int scrollY = scrollView.getScrollY();
-                if(scrollY == 0) staterefreshLayout.setEnabled(true);
-                else staterefreshLayout.setEnabled(false);
-
-            }
-        });
-
-        staterefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                isRefreshed = true;
-                parseItems();
-                staterefreshLayout.setRefreshing(false);
-                Toast.makeText(stateactivity.this, "Data Refreshed", Toast.LENGTH_SHORT).show();
-            }
-        });*/
         parseItems();
 
 
     }
 
-  /*  @Override
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.state_menu, menu);
-        MenuItem menuItem = menu.findItem(R.id.action_search);
+        getMenuInflater().inflate(R.menu.district_menu, menu);
+        MenuItem menuItem = menu.findItem(R.id.districtaction_search);
         SearchView searchView = (SearchView) menuItem.getActionView();
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -120,12 +102,23 @@ public class DistrictActivity extends AppCompatActivity implements DistrictAdapt
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                adapter.getFilter().filter(newText);
+                String userinput = newText.toLowerCase();
+                ArrayList<District_Items> mdistrictListFull = new ArrayList<>();
+                for(District_Items district : districtItems){
+                    if(district.getMdistrict().toLowerCase().contains(userinput)){
+                        mdistrictListFull.add(district);
+                    }
+                }
+                adapter.updateList(mdistrictListFull);
                 return false;
+
             }
+
         });
-        return super.onCreateOptionsMenu(menu);
-    }*/
+        return true;
+    }
+
+
 
     private void parseItems() {
 

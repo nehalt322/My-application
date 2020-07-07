@@ -2,6 +2,7 @@ package com.example.cov_19tracker;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -12,12 +13,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.razerdp.widget.animatedpieview.AnimatedPieView;
 import com.razerdp.widget.animatedpieview.AnimatedPieViewConfig;
 import com.razerdp.widget.animatedpieview.data.SimplePieInfo;
+
+import java.util.Objects;
 
 import static com.example.cov_19tracker.stateactivity.STATE_ACTIVE;
 import static com.example.cov_19tracker.stateactivity.STATE_CONFIRMED;
@@ -46,6 +50,7 @@ public class StateAnalysis extends AppCompatActivity {
     AnimatedPieView State_piechart;
 
 
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -102,10 +107,10 @@ public class StateAnalysis extends AppCompatActivity {
 
 
                 AnimatedPieViewConfig config = new AnimatedPieViewConfig();
-                config.addData(new SimplePieInfo(Float.parseFloat(stateConfirmed.replaceAll(",", "")), Color.parseColor("#FFA000"), "Confirmed"));
-                config.addData(new SimplePieInfo(Float.parseFloat(stateActive.replaceAll(",", "")), Color.parseColor("#2962FF"), "Active"));
-                config.addData(new SimplePieInfo(Float.parseFloat(stateRecovery.replaceAll(",", "")), Color.parseColor("#1B5E20"), "Recovered"));
-                config.addData(new SimplePieInfo(Float.parseFloat(stateDeceased.replaceAll(",", "")), Color.parseColor("#F44336"), "Deceased"));
+                config.addData(new SimplePieInfo(Float.parseFloat(Objects.requireNonNull(stateConfirmed).replaceAll(",", "")), Color.parseColor("#FFA000"), "Confirmed"));
+                config.addData(new SimplePieInfo(Float.parseFloat(Objects.requireNonNull(stateActive).replaceAll(",", "")), Color.parseColor("#2962FF"), "Active"));
+                config.addData(new SimplePieInfo(Float.parseFloat(Objects.requireNonNull(stateRecovery).replaceAll(",", "")), Color.parseColor("#1B5E20"), "Recovered"));
+                config.addData(new SimplePieInfo(Float.parseFloat(Objects.requireNonNull(stateDeceased).replaceAll(",", "")), Color.parseColor("#F44336"), "Deceased"));
 
                 config.strokeMode(false);
                 config.animOnTouch(true);
@@ -145,10 +150,10 @@ public class StateAnalysis extends AppCompatActivity {
 
 
         AnimatedPieViewConfig config = new AnimatedPieViewConfig();
-        config.addData(new SimplePieInfo(Float.parseFloat(stateConfirmed.replaceAll(",", "")), Color.parseColor("#FFA000"), "Confirmed"));
-        config.addData(new SimplePieInfo(Float.parseFloat(stateActive.replaceAll(",", "")), Color.parseColor("#2962FF"), "Active"));
-        config.addData(new SimplePieInfo(Float.parseFloat(stateRecovery.replaceAll(",", "")), Color.parseColor("#1B5E20"), "Recovered"));
-        config.addData(new SimplePieInfo(Float.parseFloat(stateDeceased.replaceAll(",", "")), Color.parseColor("#F44336"), "Deceased"));
+        config.addData(new SimplePieInfo(Float.parseFloat(Objects.requireNonNull(stateConfirmed).replaceAll(",", "")), Color.parseColor("#FFA000"), "Confirmed"));
+        config.addData(new SimplePieInfo(Float.parseFloat(Objects.requireNonNull(stateActive).replaceAll(",", "")), Color.parseColor("#2962FF"), "Active"));
+        config.addData(new SimplePieInfo(Float.parseFloat(Objects.requireNonNull(stateRecovery).replaceAll(",", "")), Color.parseColor("#1B5E20"), "Recovered"));
+        config.addData(new SimplePieInfo(Float.parseFloat(Objects.requireNonNull(stateDeceased).replaceAll(",", "")), Color.parseColor("#F44336"), "Deceased"));
 
         config.strokeMode(false);
         config.animOnTouch(true);
@@ -170,7 +175,7 @@ public class StateAnalysis extends AppCompatActivity {
         newdeceased.setText(stateNewDeceased);
         lastupdate.setText(stateLastUpdate);
 
-        getSupportActionBar().setTitle(stateName);
+        Objects.requireNonNull(getSupportActionBar()).setTitle(stateName);
 
 
 

@@ -5,8 +5,6 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Filter;
-import android.widget.Filterable;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -15,8 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.razerdp.widget.animatedpieview.AnimatedPieView;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+
 
 import static com.example.cov_19tracker.stateactivity.STATE_ACTIVE;
 import static com.example.cov_19tracker.stateactivity.STATE_CONFIRMED;
@@ -31,14 +28,12 @@ import static com.example.cov_19tracker.stateactivity.STATE_RECOVERED;
 public class StateAdapter extends RecyclerView.Adapter<StateAdapter.stateViewHolder> {
     public Context mcontext;
     public ArrayList<state_items> mstatelist;
-    private ArrayList<state_items> mstateListFull;
     private OnItemClickListener mListner;
 
 
     public StateAdapter(Context context, ArrayList<state_items> statelist) {
         mcontext = context;
         mstatelist = statelist;
-        mstateListFull = new ArrayList<>(statelist);
     }
 
     @NonNull
@@ -99,40 +94,8 @@ public class StateAdapter extends RecyclerView.Adapter<StateAdapter.stateViewHol
         return mstatelist.size();
     }
 
-   // @Override
-   /* public Filter getFilter() {
-        return statefilter;
-    }
-     private Filter statefilter = new Filter() {
-         @Override
-         protected FilterResults performFiltering(CharSequence charSequence) {
-             List<state_items> filteredList = new ArrayList<>();
-             if (charSequence.toString().isEmpty()){
-                 filteredList.addAll(mstateListFull);
-             }
-             else{
-                 for (state_items items: mstateListFull) {
-                     if (items.toString().toLowerCase().contains(charSequence.toString().toLowerCase())){
-                         filteredList.add(items);
-                     }
-                     
-                 }
-             }
 
-             FilterResults results = new FilterResults();
-             results.values = filteredList;
-             return results;
-         }
 
-         @Override
-         protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
-
-             mstatelist.clear();
-             mstatelist.addAll((Collection<? extends state_items>) filterResults.values);
-             notifyDataSetChanged();
-         }
-
-     };*/
 
     public interface OnItemClickListener {
         void OnItemClick(int position);
@@ -185,5 +148,11 @@ public class StateAdapter extends RecyclerView.Adapter<StateAdapter.stateViewHol
                 }
             });
         }
+    }
+    public void updateList(ArrayList<state_items> mstateListFull){
+        mstatelist = new ArrayList<>();
+        mstatelist.addAll(mstateListFull);
+        notifyDataSetChanged();
+
     }
 }

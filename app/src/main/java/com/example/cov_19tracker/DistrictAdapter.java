@@ -99,40 +99,12 @@ public class DistrictAdapter extends RecyclerView.Adapter<DistrictAdapter.distri
         return mdistrictlist.size();
     }
 
-    // @Override
-   /* public Filter getFilter() {
-        return statefilter;
+    public void updateList(ArrayList<District_Items> mdistrictListFull) {
+        mdistrictlist = new ArrayList<>();
+        mdistrictlist.addAll(mdistrictListFull);
+        notifyDataSetChanged();
     }
-     private Filter statefilter = new Filter() {
-         @Override
-         protected FilterResults performFiltering(CharSequence charSequence) {
-             List<state_items> filteredList = new ArrayList<>();
-             if (charSequence.toString().isEmpty()){
-                 filteredList.addAll(mstateListFull);
-             }
-             else{
-                 for (state_items items: mstateListFull) {
-                     if (items.toString().toLowerCase().contains(charSequence.toString().toLowerCase())){
-                         filteredList.add(items);
-                     }
 
-                 }
-             }
-
-             FilterResults results = new FilterResults();
-             results.values = filteredList;
-             return results;
-         }
-
-         @Override
-         protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
-
-             mstatelist.clear();
-             mstatelist.addAll((Collection<? extends state_items>) filterResults.values);
-             notifyDataSetChanged();
-         }
-
-     };*/
 
     public interface OnItemClickListener {
         void OnItemClick(int position);
@@ -181,5 +153,10 @@ public class DistrictAdapter extends RecyclerView.Adapter<DistrictAdapter.distri
                 }
             });
         }
+
+
+
+
+
     }
 }
