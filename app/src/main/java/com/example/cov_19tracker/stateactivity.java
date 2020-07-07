@@ -71,52 +71,36 @@ public class stateactivity extends AppCompatActivity implements StateAdapter.OnI
         stateItems = new ArrayList<>();
         requestQueue = Volley.newRequestQueue(this);
 
+       @Override
+        public boolean onCreateOptionsMenu(Menu menu) {
+            getMenuInflater().inflate(R.menu.state_menu, menu);
+            returns
+            MenuItem menuItem = menu.findItem(R.id.action_search);
+            SearchView searchView = (SearchView) menuItem.getActionView();
+            searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+                @Override
+                public boolean onQueryTextSubmit(String query) {
+                    return false;
+                }
+
+                @Override
+                public boolean onQueryTextChange(String newText) {
+                    adapter.getFilter().filter(newText);
+                    return false;
+                }
+            });
+            return super.onCreateOptionsMenu(menu);
+        }*/
 
 
-      /*  scrollView.getViewTreeObserver().addOnScrollChangedListener(new ViewTreeObserver.OnScrollChangedListener() {
 
-            @Override
-            public void onScrollChanged() {
-                int scrollY = scrollView.getScrollY();
-                if(scrollY == 0) staterefreshLayout.setEnabled(true);
-                else staterefreshLayout.setEnabled(false);
 
-            }
-        });
-
-        staterefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                isRefreshed = true;
-                parseItems();
-                staterefreshLayout.setRefreshing(false);
-                Toast.makeText(stateactivity.this, "Data Refreshed", Toast.LENGTH_SHORT).show();
-            }
-        });*/
         parseItems();
 
 
     }
 
-  /*  @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.state_menu, menu);
-        MenuItem menuItem = menu.findItem(R.id.action_search);
-        SearchView searchView = (SearchView) menuItem.getActionView();
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                return false;
-            }
 
-            @Override
-            public boolean onQueryTextChange(String newText) {
-                adapter.getFilter().filter(newText);
-                return false;
-            }
-        });
-        return super.onCreateOptionsMenu(menu);
-    }*/
 
     private void parseItems() {
 
