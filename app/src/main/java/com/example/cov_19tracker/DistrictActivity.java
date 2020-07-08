@@ -50,9 +50,10 @@ public class DistrictActivity extends AppCompatActivity implements DistrictAdapt
     public static final String DISTRICT_NEW_CONFIRMED = "dt_deltaconfirmed";
     public static final String DISTRICT_NEW_RECOVERED = "dt_deltarecovered";
     public static final String DISTRICT_NEW_DECEASED = "dt_deltadeceased";
-    //public static final String STATE_LAST_UPDATE = "stateLastUpdate";
+   // public static final String STATE_LAST_UPDATE = "districtLastUpdate";
     public static final String DISTRICT_RECOVERED = "dt_recovered";
     private String stateName;
+    private String districtdate;
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
@@ -61,7 +62,7 @@ public class DistrictActivity extends AppCompatActivity implements DistrictAdapt
         setContentView(R.layout.district);
         Intent newintent = getIntent();
         stateName = newintent.getStringExtra(STATE_NAME);
-
+        
 
         Objects.requireNonNull(getSupportActionBar()).setTitle("District");
 
@@ -189,7 +190,8 @@ public class DistrictActivity extends AppCompatActivity implements DistrictAdapt
                                             }
 
 
-                                            districtItems.add(new District_Items(dt_active, dt_confirmed, dt_recovered, dt_deceased, dt_deltaconfirmed, dt_deltarecovered, dt_deltadeceased, dt_name));
+
+                                            districtItems.add(new District_Items(dt_active, dt_confirmed, dt_recovered, dt_deceased, dt_deltaconfirmed, dt_deltarecovered, dt_deltadeceased, dt_name ));
                                         }
                                     }
                                 }
@@ -227,7 +229,6 @@ public class DistrictActivity extends AppCompatActivity implements DistrictAdapt
         districtIntent.putExtra(DISTRICT_NEW_CONFIRMED, clickedItem.getMnewconfirmed());
         districtIntent.putExtra(DISTRICT_NEW_RECOVERED, clickedItem.getMnewrecovered());
         districtIntent.putExtra(DISTRICT_NEW_DECEASED, clickedItem.getMnewdeceased());
-        //   stateIntent.putExtra(STATE_LAST_UPDATE, clickedItem.getLastupdate());
         districtIntent.putExtra(DISTRICT_RECOVERED, clickedItem.getMrecovered());
 
         startActivity(districtIntent);
