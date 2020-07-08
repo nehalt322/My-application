@@ -39,11 +39,15 @@
                 android:textSize="18sp"
                 android:layout_marginEnd="15dp" />
 
-
-
-
-
-
+            <TextView
+                android:id="@+id/textView_indicator"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/indicator"
+                android:gravity="end"
+                android:textColor="#f76f07"
+                android:layout_marginRight="10dp"
+                android:layout_marginEnd="10dp" />
 
 
         </RelativeLayout>

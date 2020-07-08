@@ -145,6 +145,7 @@ public class stateactivity extends AppCompatActivity implements StateAdapter.OnI
                                     st_deltaconfirmed = (NumberFormat.getInstance(new Locale("en", "IN")).format(new_deltaconfirmed));
                                     st_deltaconfirmed = ("\u002B" + st_deltaconfirmed);
                                 }else{
+                                    new_deltaconfirmed = - new_deltaconfirmed;
                                     st_deltaconfirmed = (NumberFormat.getInstance(new Locale("en", "IN")).format(new_deltaconfirmed));
                                     st_deltaconfirmed = ("\u002D" + st_deltaconfirmed);
 
@@ -156,6 +157,7 @@ public class stateactivity extends AppCompatActivity implements StateAdapter.OnI
                                     st_deltarecovered = (NumberFormat.getInstance(new Locale("en", "IN")).format(new_deltarecovered));
                                     st_deltarecovered = ("\u002B" + st_deltarecovered);
                                 }else{
+                                    new_deltarecovered =  - new_deltarecovered;
                                     st_deltarecovered = (NumberFormat.getInstance(new Locale("en", "IN")).format(new_deltarecovered));
                                     st_deltarecovered = ("\u002D" + st_deltarecovered);
 
@@ -166,6 +168,7 @@ public class stateactivity extends AppCompatActivity implements StateAdapter.OnI
                                     st_deltadeceased = (NumberFormat.getInstance(new Locale("en", "IN")).format(new_deltadeceased));
                                     st_deltadeceased = ("\u002B" + st_deltadeceased);
                                 }else{
+                                    new_deltadeceased =  - new_deltadeceased;
                                     st_deltadeceased = (NumberFormat.getInstance(new Locale("en", "IN")).format(new_deltadeceased));
                                     st_deltadeceased = ("\u002D" + st_deltadeceased);
 

@@ -159,6 +159,7 @@ public class DistrictActivity extends AppCompatActivity implements DistrictAdapt
                                                 dt_deltaconfirmed = (NumberFormat.getInstance(new Locale("en", "IN")).format(new_deltaconfirmed));
                                                 dt_deltaconfirmed = ("\u002B" + dt_deltaconfirmed);
                                             } else {
+                                                new_deltaconfirmed = - new_deltaconfirmed;
                                                 dt_deltaconfirmed = (NumberFormat.getInstance(new Locale("en", "IN")).format(new_deltaconfirmed));
                                                 dt_deltaconfirmed = ("\u002D" + dt_deltaconfirmed);
 
@@ -170,6 +171,7 @@ public class DistrictActivity extends AppCompatActivity implements DistrictAdapt
                                                 dt_deltarecovered = (NumberFormat.getInstance(new Locale("en", "IN")).format(new_deltarecovered));
                                                 dt_deltarecovered = ("\u002B" + dt_deltarecovered);
                                             } else {
+                                                new_deltarecovered = - new_deltarecovered;
                                                 dt_deltarecovered = (NumberFormat.getInstance(new Locale("en", "IN")).format(new_deltarecovered));
                                                 dt_deltarecovered = ("\u002D" + dt_deltarecovered);
 
@@ -180,6 +182,7 @@ public class DistrictActivity extends AppCompatActivity implements DistrictAdapt
                                                 dt_deltadeceased = (NumberFormat.getInstance(new Locale("en", "IN")).format(new_deltadeceased));
                                                 dt_deltadeceased = ("\u002B" + dt_deltadeceased);
                                             } else {
+                                                new_deltadeceased = - new_deltadeceased;
                                                 dt_deltadeceased = (NumberFormat.getInstance(new Locale("en", "IN")).format(new_deltadeceased));
                                                 dt_deltadeceased = ("\u002D" + dt_deltadeceased);
 

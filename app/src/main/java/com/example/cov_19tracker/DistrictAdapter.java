@@ -67,24 +67,13 @@ public class DistrictAdapter extends RecyclerView.Adapter<DistrictAdapter.distri
         });
         District_Items currentitems = mdistrictlist.get(position);
 
-    /*    String Active = currentitems.getMactive();
-        String Confirmed = currentitems.getMconfirmed();
-        String Recovered = currentitems.getMrecovered();
-        String Deceased = currentitems.getMdeceased();
-        String New_confirmed = currentitems.getMnewconfirmed();
 
-        String New_recovered = currentitems.getMnewrecovered();
-        String New_deceased = currentitems.getMnewdeceased(); */
+        String New_confirmed = currentitems.getMnewconfirmed();
         String New_district = currentitems.getMdistrict();
 
-    /*    holder.stateconfirmed.setText(Active);
-        holder.stateactive.setText(Confirmed);
-        holder.staterecovered.setText(Recovered);
-        holder.statedeceased.setText(Deceased);
-        holder.newstateconfirmed.setText("+" + New_confirmed);
-        holder.newrecovered.setText("+" + New_recovered);
-        holder.newdeceased.setText("+" + New_deceased);   */
+
         holder.districtview.setText(New_district);
+        holder.dindicator.setText(New_confirmed);
 
     }
 
@@ -120,6 +109,7 @@ public class DistrictAdapter extends RecyclerView.Adapter<DistrictAdapter.distri
         public TextView newdistrictconfirmed;
         public TextView newdistrictrecovered;
         public TextView newdistrictdeceased;
+        public TextView dindicator;
         AnimatedPieView District_pieView;
 
         public districtViewHolder(View itemView) {
@@ -132,6 +122,7 @@ public class DistrictAdapter extends RecyclerView.Adapter<DistrictAdapter.distri
             newdistrictconfirmed = itemView.findViewById(R.id.tvdistrict_newconfirmed);
             newdistrictrecovered = itemView.findViewById(R.id.tvdistrict_newrecovered);
             newdistrictdeceased = itemView.findViewById(R.id.tvdistrict_newdeceased);
+            dindicator = itemView.findViewById(R.id.districttextView_indicator);
             District_pieView = itemView.findViewById(R.id.District_PieChart);
 
 

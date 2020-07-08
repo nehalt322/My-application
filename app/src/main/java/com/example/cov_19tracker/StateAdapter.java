@@ -68,24 +68,14 @@ public class StateAdapter extends RecyclerView.Adapter<StateAdapter.stateViewHol
         });
         state_items currentitems = mstatelist.get(position);
 
-    /*    String Active = currentitems.getMactive();
-        String Confirmed = currentitems.getMconfirmed();
-        String Recovered = currentitems.getMrecovered();
-        String Deceased = currentitems.getMdeceased();
-        String New_confirmed = currentitems.getMnewconfirmed();
 
-        String New_recovered = currentitems.getMnewrecovered();
-        String New_deceased = currentitems.getMnewdeceased(); */
+        String New_confirmed = currentitems.getMnewconfirmed();
         String New_state = currentitems.getMstate();
 
-    /*    holder.stateconfirmed.setText(Active);
-        holder.stateactive.setText(Confirmed);
-        holder.staterecovered.setText(Recovered);
-        holder.statedeceased.setText(Deceased);
-        holder.newstateconfirmed.setText("+" + New_confirmed);
-        holder.newrecovered.setText("+" + New_recovered);
-        holder.newdeceased.setText("+" + New_deceased);   */
+
         holder.stateview.setText(New_state);
+        holder.indicator.setText(New_confirmed);
+
 
     }
 
@@ -120,6 +110,7 @@ public class StateAdapter extends RecyclerView.Adapter<StateAdapter.stateViewHol
         public TextView newrecovered;
         public TextView newdeceased;
         public TextView lastupdate;
+        public TextView indicator;
         public AnimatedPieView State_piechart;
 
         public stateViewHolder(View itemView) {
@@ -133,6 +124,7 @@ public class StateAdapter extends RecyclerView.Adapter<StateAdapter.stateViewHol
             newrecovered = itemView.findViewById(R.id.tvstate_newrecovered);
             newdeceased = itemView.findViewById(R.id.tvstate_newdeceased);
             lastupdate = itemView.findViewById(R.id.tvstatedate);
+            indicator = itemView.findViewById(R.id.textView_indicator);
             State_piechart = itemView.findViewById(R.id.State_PieChart);
 
 
