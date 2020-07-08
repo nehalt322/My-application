@@ -61,7 +61,7 @@ public class DistrictAnalysis extends AppCompatActivity {
         newdistrictdeceased = findViewById(R.id.tvdistrict_newdeceased);
         districtrefreshLayout= findViewById(R.id.districtRefresh_layout);
         scrollView = findViewById(R.id.districtScrollView);
-         district_PieView = findViewById(R.id.District_PieChart);
+        district_PieView = findViewById(R.id.District_PieChart);
 
 
 
@@ -100,6 +100,7 @@ public class DistrictAnalysis extends AppCompatActivity {
                 config.strokeMode(false);
                 config.animOnTouch(true);
                 config.splitAngle(3);
+                config.duration(10);
                 config.drawText(true);
                 config.textSize(30);
 
@@ -128,6 +129,7 @@ public class DistrictAnalysis extends AppCompatActivity {
         String districtNewRecovered = intent.getStringExtra(DISTRICT_NEW_RECOVERED);
         String districtNewDeceased = intent.getStringExtra(DISTRICT_NEW_DECEASED);
         String districtRecovery = intent.getStringExtra(DISTRICT_RECOVERED);
+
 
         AnimatedPieViewConfig config = new AnimatedPieViewConfig();
         config.addData(new SimplePieInfo(Float.parseFloat(Objects.requireNonNull(districtConfirmed).replaceAll(",", "")), Color.parseColor("#FFA000"), "Confirmed"));

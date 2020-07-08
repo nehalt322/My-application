@@ -11,7 +11,7 @@ public class District_Items {
     private String mdistrict;
     private String mdate;
 
-    public District_Items(String active , String confirmed , String recovered , String deceased , String newconfirmed , String newrecovered , String newdeceased , String district ){
+    public District_Items(String active , String confirmed , String recovered , String deceased , String newconfirmed , String newrecovered , String newdeceased , String district  ){
         mactive = active;
         mconfirmed = confirmed;
         mrecovered = recovered;
@@ -36,6 +36,7 @@ public class District_Items {
     public String getMconfirmed() {
         return mconfirmed;
     }
+
 
     public String getMrecovered() {
         return mrecovered;

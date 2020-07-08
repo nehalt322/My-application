@@ -115,6 +115,7 @@ public class StateAnalysis extends AppCompatActivity {
                 config.strokeMode(false);
                 config.animOnTouch(true);
                 config.splitAngle(3);
+                config.duration(10);
                 config.drawText(true);
                 config.textSize(30);
 

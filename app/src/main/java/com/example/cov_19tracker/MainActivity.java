@@ -1,10 +1,5 @@
 package com.example.cov_19tracker;
 
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
-
 import android.content.Intent;
 import android.graphics.Color;
 import android.icu.text.NumberFormat;
@@ -17,6 +12,10 @@ import android.widget.Button;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -32,7 +31,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.ArrayList;
 import java.util.Locale;
 
 
@@ -150,10 +148,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-                                String cpy_nconfirmed = nconfirmed;
-                                String cpy_nactive = nactive;
-                                String cpy_nrecovered = nrecovered;
-                                String cpy_ndeceased = ndeceased ;
+
 
 
 
@@ -188,44 +183,44 @@ public class MainActivity extends AppCompatActivity {
                                 int ndelta_confirmed = Integer.parseInt(deltaconfirmed);
                                 if (ndelta_confirmed >= 0){
                                     deltaconfirmed = NumberFormat.getInstance(new Locale("en", "IN")).format(ndelta_confirmed);
-                                    newconfirmed.setText("\u002B" + deltaconfirmed);
+                                    newconfirmed.setText(String.format("+%s", deltaconfirmed));
                                 }else {
-                                    ndelta_confirmed = 0 - ndelta_confirmed;
+                                    ndelta_confirmed = -ndelta_confirmed;
                                     deltaconfirmed = NumberFormat.getInstance(new Locale("en", "IN")).format(ndelta_confirmed);
-                                    newconfirmed.setText("\u002D" + deltaconfirmed);
+                                    newconfirmed.setText(String.format("-%s", deltaconfirmed));
 
                                 }
 
                                 int ndelta_recovered = Integer.parseInt(deltarecovered);
                                 if (ndelta_recovered >= 0){
                                 deltarecovered = NumberFormat.getInstance(new Locale("en", "IN")).format(ndelta_recovered);
-                                newrecovered.setText("\u002B" + deltarecovered);
+                                newrecovered.setText(String.format("+%s", deltarecovered));
                                 }else {
-                                    ndelta_recovered = 0 - ndelta_recovered;
+                                    ndelta_recovered =  - ndelta_recovered;
                                     deltarecovered = NumberFormat.getInstance(new Locale("en", "IN")).format(ndelta_recovered);
-                                    newrecovered.setText("\u002D" + deltarecovered);
+                                    newrecovered.setText(String.format("-%s", deltarecovered));
 
                                 }
 
                                 int ndelta_deceased = Integer.parseInt(deltadeceased);
                                 if (ndelta_deceased >= 0){
                                     deltadeceased = NumberFormat.getInstance(new Locale("en", "IN")).format(ndelta_deceased);
-                                    newdeceased.setText("\u002B" + deltadeceased);
+                                    newdeceased.setText(String.format("+%s", deltadeceased));
                                 }else {
-                                    ndelta_deceased = 0 - ndelta_deceased;
+                                    ndelta_deceased =  - ndelta_deceased;
                                     deltadeceased = NumberFormat.getInstance(new Locale("en", "IN")).format(ndelta_deceased);
-                                    newdeceased.setText("\u002D" + deltadeceased);
+                                    newdeceased.setText(String.format("-%s", deltadeceased));
 
                                 }
 
                                 int ndelta_test = Integer.parseInt(deltatest);
                                 if (ndelta_test >= 0){
                                     deltatest = NumberFormat.getInstance(new Locale("en", "IN")).format(ndelta_test);
-                                    newtested.setText("\u002B" + deltatest);
+                                    newtested.setText(String.format("+%s", deltatest));
                                 }else {
-                                    ndelta_test = 0 - ndelta_test;
+                                    ndelta_test =  - ndelta_test;
                                     deltatest = NumberFormat.getInstance(new Locale("en", "IN")).format(ndelta_test);
-                                    newtested.setText("\u002D" + deltatest);
+                                    newtested.setText(String.format("-%s", deltatest));
 
                                 }
 
@@ -242,8 +237,11 @@ public class MainActivity extends AppCompatActivity {
                                 config.strokeMode(false);
                                 config.animOnTouch(true);
                                 config.splitAngle(3);
+                                config.duration(10);
                                 config.drawText(true);
                                 config.textSize(20);
+
+
 
 
                                 mPieChart.applyConfig(config);
@@ -264,10 +262,6 @@ public class MainActivity extends AppCompatActivity {
                                 lastupdated = (statewise.getString("lastupdatedtime"));
                                 lastupdate.setText(lastupdated);
 
-                                String cpy_nconfirmed = nconfirmed;
-                                String cpy_nactive = nactive;
-                                String cpy_nrecovered = nrecovered;
-                                String cpy_ndeceased = ndeceased ;
 
 
 
@@ -302,22 +296,22 @@ public class MainActivity extends AppCompatActivity {
                                 int ndelta_confirmed = Integer.parseInt(deltaconfirmed);
                                 if (ndelta_confirmed >= 0){
                                     deltaconfirmed = NumberFormat.getInstance(new Locale("en", "IN")).format(ndelta_confirmed);
-                                    newconfirmed.setText("\u002B" + deltaconfirmed);
+                                    newconfirmed.setText(String.format("+%s", deltaconfirmed));
                                 }else {
-                                    ndelta_confirmed = 0 - ndelta_confirmed;
+                                    ndelta_confirmed =  - ndelta_confirmed;
                                     deltaconfirmed = NumberFormat.getInstance(new Locale("en", "IN")).format(ndelta_confirmed);
-                                    newconfirmed.setText("\u002D" + deltaconfirmed);
+                                    newconfirmed.setText(String.format("-%s", deltaconfirmed));
 
                                 }
 
                                 int ndelta_recovered = Integer.parseInt(deltarecovered);
                                 if (ndelta_recovered >= 0){
                                     deltarecovered = NumberFormat.getInstance(new Locale("en", "IN")).format(ndelta_recovered);
-                                    newrecovered.setText("\u002B" + deltarecovered);
+                                    newrecovered.setText(String.format("+%s", deltarecovered));
                                 }else {
-                                    ndelta_recovered = 0 - ndelta_recovered;
+                                    ndelta_recovered =  - ndelta_recovered;
                                     deltarecovered = NumberFormat.getInstance(new Locale("en", "IN")).format(ndelta_recovered);
-                                    newrecovered.setText("\u002D" + deltarecovered);
+                                    newrecovered.setText(String.format("-%s", deltarecovered));
 
                                 }
 
@@ -325,22 +319,22 @@ public class MainActivity extends AppCompatActivity {
                                 int ndelta_deceased = Integer.parseInt(deltadeceased);
                                 if (ndelta_deceased >= 0){
                                     deltadeceased = NumberFormat.getInstance(new Locale("en", "IN")).format(ndelta_deceased);
-                                    newdeceased.setText("\u002B" + deltadeceased);
+                                    newdeceased.setText(String.format("+%s", deltadeceased));
                                 }else {
-                                    ndelta_deceased = 0 - ndelta_deceased;
+                                    ndelta_deceased =  - ndelta_deceased;
                                     deltadeceased = NumberFormat.getInstance(new Locale("en", "IN")).format(ndelta_deceased);
-                                    newdeceased.setText("\u002D" + deltadeceased);
+                                    newdeceased.setText(String.format("-%s", deltadeceased));
 
                                 }
 
                                 int ndelta_test = Integer.parseInt(deltatest);
                                 if (ndelta_test >= 0){
                                     deltatest = NumberFormat.getInstance(new Locale("en", "IN")).format(ndelta_test);
-                                    newtested.setText("\u002B" + deltatest);
+                                    newtested.setText(String.format("+%s", deltatest));
                                 }else {
-                                    ndelta_test = 0 - ndelta_test;
+                                    ndelta_test =  - ndelta_test;
                                     deltatest = NumberFormat.getInstance(new Locale("en", "IN")).format(ndelta_test);
-                                    newtested.setText("\u002D" + deltatest);
+                                    newtested.setText(String.format("-%s", deltatest));
 
                                 }
 
@@ -357,15 +351,10 @@ public class MainActivity extends AppCompatActivity {
                                 config.drawText(true);
                                 config.textSize(20);
 
+
                                 mPieChart.applyConfig(config);
                                 mPieChart.start();
 
-                              //  mPieChart.addPieSlice(new PieModel("Confirmed", Integer.parseInt(cpy_nconfirmed), Color.parseColor("#FBC233")));
-                               // mPieChart.addPieSlice(new PieModel("Recovered", Integer.parseInt(cpy_nrecovered), Color.parseColor("#7EC544")));
-                                //mPieChart.addPieSlice(new PieModel("Deceased", Integer.parseInt(cpy_ndeceased), Color.parseColor("#F6404F")));
-                               // mPieChart.addPieSlice(new PieModel("Active", Integer.parseInt(cpy_nactive), Color.parseColor("#78DBF3")));
-
-                               // mPieChart.startAnimation();
 
                             }
 

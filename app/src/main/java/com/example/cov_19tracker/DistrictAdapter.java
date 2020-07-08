@@ -14,6 +14,7 @@ import com.razerdp.widget.animatedpieview.AnimatedPieView;
 
 import java.util.ArrayList;
 
+import static com.example.cov_19tracker.stateactivity.STATE_LAST_UPDATE;
 import static com.example.cov_19tracker.DistrictActivity.DISTRICT_ACTIVE;
 import static com.example.cov_19tracker.DistrictActivity.DISTRICT_CONFIRMED;
 import static com.example.cov_19tracker.DistrictActivity.DISTRICT_DECEASED;
@@ -58,7 +59,6 @@ public class DistrictAdapter extends RecyclerView.Adapter<DistrictAdapter.distri
                 districtIntent.putExtra(DISTRICT_NEW_CONFIRMED, clickedItem.getMnewconfirmed());
                 districtIntent.putExtra(DISTRICT_NEW_RECOVERED, clickedItem.getMnewrecovered());
                 districtIntent.putExtra(DISTRICT_NEW_DECEASED, clickedItem.getMnewdeceased());
-                //   stateIntent.putExtra(STATE_LAST_UPDATE, clickedItem.getLastupdate());
                 districtIntent.putExtra(DISTRICT_RECOVERED, clickedItem.getMrecovered());
 
                 mcontext.startActivity(districtIntent);
